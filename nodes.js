@@ -29,5 +29,6 @@ node_1.setNextNode(node_2);
 node_2.setNextNode(node_3);
 node_3.setNextNode(node_4);
 
-// console.log(node_1.next.next.next.next);
-// console.log(node_1);
+// console.log(node_1.getNextNode().getNextNode().getNextNode().getNextNode());
+
+export { Node };
