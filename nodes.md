@@ -1,6 +1,13 @@
-// // // // // // // // // // // // // // //
+# Nodes
 
-// example of a simple Node class in JS
+A **Node** is a basic building block that contains some data (value) and a reference to the next node in the sequence.
+
+By connecting nodes in this way, you can form a linear structure where elements are linked to one another.
+
+In JavaScript, nodes can be used to create linear data structures like linked lists.
+
+```js
+// example of a Node class in JS
 class Node {
     constructor(value) {
         this.value = value;
@@ -23,9 +30,18 @@ while (currentNode !== null) {
     console.log(currentNode.value);
     currentNode = currentNode.next;
 }
+```
 
-// // // // // // // // // // // // // // //
+-   An individual node contains: a **value** and a **reference** to other node.
+-   If the **reference** is null, it denotes the end of the node structure.
+-   Term: "Orphaned node" refers to a node with no exisitng link to it.
+-   When you create and connect multiple nodes, you form a linear data structure.
 
+<br>
+
+## More strict example
+
+```js
 class strict_node {
     constructor(value) {
         this.value = value;
@@ -54,5 +70,6 @@ while (current_Node !== null) {
     console.log(current_Node.value);
     current_Node = current_Node.next;
 }
+```
 
-// // // // // // // // // // // // ™// // //
+<br>
