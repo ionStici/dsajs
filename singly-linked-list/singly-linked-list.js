@@ -62,6 +62,5 @@ const list = new LinkedList();
 list.addToHead(1);
 list.addToTail(2);
 list.addToTail(3);
-
 list.length();
 list.print();
