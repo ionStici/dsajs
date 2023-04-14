@@ -1,1 +1,1 @@
-import './nodes.js';
+import './singly-linked-list.js';
