@@ -1,10 +1,7 @@
 # Singly Linked List
 
 -   [Linked List](https://github.com/trekhleb/javascript-algorithms/tree/master/src/data-structures/linked-list)
-
--   [Code Example](./singly-linked-list.js)
-
--   [Code Example 2](./singly-linked-list-2.js)
+-   Code examples [1](./singly-linked-list.js), [2](./singly-linked-list-2.js)
 
 **Singly Linked Lists** are a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence.
 
