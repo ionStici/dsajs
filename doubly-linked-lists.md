@@ -2,6 +2,10 @@
 
 [Doubly Linked List (GitHub Repo)](https://github.com/trekhleb/javascript-algorithms/tree/master/src/data-structures/doubly-linked-list)
 
+Doubly Linked Lists are a linear data structure (an extension of the singly linked list).
+
+This bidirectional structure allows for efficient traversal in both forward and backward directions.
+
 A **doubly linked list** is comprised of a series of nodes.
 
 Each node contains DATA and TWO LINKS (or pointers) to the next and previous nodes in the list.
@@ -68,5 +72,93 @@ Two pointers that must be updated:
 - Set the removed node’s following node’s previous pointer to its preceding node
 
 There is no need to change the pointers of the removed node, as updating the pointers of its neighboring nodes will remove it from the list. If no nodes in the list are pointing to it, the node is orphaned.
+
+<br>
+
+## Node Class and Constructor
+
+A Doubly Linked List is a sequential chain of nodes.
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+    this.prev = null;
+  }
+
+  setNextNode(node) {
+    if (node instanceof Node || node === null) {
+      this.next = node;
+    }
+  }
+
+  setPrevNode(node) {
+    if (node instanceof Node || node === null) {
+      this.prev = node;
+    }
+  }
+
+  getNextNode() {
+    return this.next;
+  }
+
+  getPrevNode() {
+    return this.prev;
+  }
+}
+```
+
+```js
+class DoublyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+
+  // other methods
+
+  printList() {
+    let currentNode = this.head;
+    let output = "<head> ";
+
+    while (currentNode !== null) {
+      output += currentNode.data + " ";
+      currentNode = currentNode.getNextNode();
+    }
+
+    output += "<tail>";
+    console.log(output);
+  }
+
+  getSize() {
+    return this.size;
+  }
+}
+```
+
+<br>
+
+## Add to Head
+
+```js
+addToHead(node) {
+    let currentHead = this.head;
+
+    if (currentHead === null) {
+        this.head = node;
+        this.tail = node;
+        this.size++;
+    }
+
+    if (currentHead !== null) {
+        currentHead.setPrevNode(node);
+        this.head = node;
+        node.setNextNode(currentHead);
+        this.size++;
+    }
+}
+```
 
 <br>
