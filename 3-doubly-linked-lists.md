@@ -194,7 +194,7 @@ removeHead() {
     if (removedHead === this.tail) this.removeTail();
 
     this.size--;
-    return removedHead.data;
+    return removedHead;
 }
 ```
 
@@ -212,8 +212,78 @@ removeTail() {
     if (removedTail === this.head) this.removeHead();
 
     this.size--;
-    return removedTail.data;
+    return removedTail;
 }
+```
+
+<br>
+
+## Remove By Data
+
+- Iterate through the list to find the matching node
+- If there is no matching element then return `null`.
+- If there is a matching node, first check if it is the head or tail of the list:
+  - If so, then call the corresponding `removeHead` or `removeTail` method.
+- If not, remove the node by setting the pointers of its previous and next nodes.
+
+```js
+removeByData(data) {
+    let nodeToRemove;
+    let currentNode = this.head;
+
+    while (currentNode !== null) {
+        if (currentNode.data === data) {
+            nodeToRemove = currentNode;
+            break;
+        }
+        currentNode = currentNode.getNextNode();
+    }
+    if (!nodeToRemove) return null;
+
+    if (nodeToRemove === this.head) {
+        this.removeHead();
+    } else if (nodeToRemove === this.tail) {
+        this.removeTail();
+    } else {
+        const prevNode = nodeToRemove.getPrevNode();
+        const nextNode = nodeToRemove.getNextNode();
+
+        prevNode.setNextNode(nextNode);
+        nextNode.setPrevNode(prevNode);
+    }
+
+    this.size--;
+    return nodeToRemove;
+}
+```
+
+<br>
+
+## Using the Doubly Linked List
+
+```js
+const subway = new DoublyLinkedList();
+subway.addToHead("TimesSquare");
+subway.addToHead("GrandCentral");
+subway.addToHead("CentralPark");
+subway.printList();
+
+subway.addToTail("PennStation");
+subway.addToTail("WallStreet");
+subway.addToTail("BrooklynBridge");
+subway.printList();
+
+subway.removeHead();
+subway.removeTail();
+subway.printList();
+
+subway.removeByData("TimesSquare");
+subway.printList();
+
+// <head> CentralPark GrandCentral TimesSquare <tail>
+// <head> CentralPark GrandCentral TimesSquare PennStation WallStreet BrooklynBridge <tail>
+// <head> GrandCentral TimesSquare PennStation WallStreet <tail>
+// <head> GrandCentral PennStation WallStreet <tail>
 ```
 
 <br>
