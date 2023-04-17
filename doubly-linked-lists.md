@@ -143,21 +143,76 @@ class DoublyLinkedList {
 ## Add to Head
 
 ```js
-addToHead(node) {
-    let currentHead = this.head;
+addToHead(data) {
+    const newHead = new Node(data)
+    const currentHead = this.head;
 
-    if (currentHead === null) {
-        this.head = node;
-        this.tail = node;
-        this.size++;
+    if (currentHead) {
+        currentHead.setPrevNode(newHead);
+        newHead.setNextNode(currentHead)
     }
 
-    if (currentHead !== null) {
-        currentHead.setPrevNode(node);
-        this.head = node;
-        node.setNextNode(currentHead);
-        this.size++;
+    if (!currentHead) this.tail = newHead;
+
+    this.head = newHead;
+    this.size++;
+}
+```
+
+<br>
+
+## Add to Tail
+
+```js
+addToTail(data) {
+    const currentTail = this.tail;
+    const newTail = new Node(data);
+
+    if (currentTail) {
+        currentTail.setNextNode(newTail);
+        newTail.setPrevNode(currentTail);
     }
+
+    if (!currentTail) this.head = newTail;
+
+    this.tail = newTail;
+    this.size++;
+}
+```
+
+<br>
+
+## Remove Head
+
+```js
+removeHead() {
+    const removedHead = this.head;
+    if (!removedHead) return;
+
+    this.head = removedHead.getNextNode();
+    if (this.head) this.head.setPrevNode(null);
+    if (removedHead === this.tail) this.removeTail();
+
+    this.size--;
+    return removedHead.data;
+}
+```
+
+<br>
+
+## Remove Tail
+
+```js
+removeTail() {
+    const removedTail = this.tail;
+    if (!removedTail) return;
+
+    this.tail = removedTail.getPrevNode();
+    if (this.tail) this.tail.setNextNode(null);
+    if (removedTail === this.head) this.removeHead();
+
+    this.size--;
+    return removedTail.data;
 }
 ```
 
