@@ -1,6 +1,6 @@
 # Doubly Linked Lists
 
-[Doubly Linked List (GitHub Repo)](https://github.com/trekhleb/javascript-algorithms/tree/master/src/data-structures/doubly-linked-list)
+[Doubly Linked List (javascript-algorithms repo)](https://github.com/trekhleb/javascript-algorithms/tree/master/src/data-structures/doubly-linked-list)
 
 Doubly Linked Lists are a linear data structure (an extension of the singly linked list).
 
