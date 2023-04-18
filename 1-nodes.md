@@ -1,3 +1,5 @@
+[&larr; Back](./README.md)
+
 # Nodes
 
 A **Node** is a basic building block that contains some data (value) and a reference (pointer) to the next node in the sequence.
