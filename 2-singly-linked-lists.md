@@ -182,3 +182,11 @@ function swapNodes(list, data1, data2) {
 ```
 
 <br>
+
+<!-- ## Two-Pointer Linked List Techniques
+
+"runner technique"
+
+[cc](https://www.codecademy.com/journeys/front-end-engineer/paths/fecj-22-interview-prep/tracks/fecj-22-linear-data-structures/modules/wdcp-22-singly-linked-lists-d50f2ced-f53c-476d-92e1-1d1ead5b7bbc/articles/two-pointer-linked-list-techniques)
+
+<br> -->
