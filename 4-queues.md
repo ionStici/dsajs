@@ -36,4 +36,109 @@ Queues are useful in situations where you need to maintain the order of elements
 
 <br>
 
-<!-- ## Queues in JavaScript -->
+## Queues in JavaScript
+
+To build queues we will use the following data structures: _Nodes_ and _Linked Lists_.
+
+<details>
+<summary>Node</summary>
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+
+  setNextNode(node) {
+    if (!(node instanceof Node)) throw new Error();
+    this.next = node;
+  }
+
+  setNext(data) {
+    this.next = data;
+  }
+
+  getNextNode() {
+    return this.next;
+  }
+}
+```
+
+<br>
+
+</details>
+
+<details>
+<summary>Linked List</summary>
+
+```js
+const Node = require("./Node");
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  addToHead(data) {
+    const nextNode = new Node(data);
+    const currentHead = this.head;
+    this.head = nextNode;
+    if (currentHead) {
+      this.head.setNextNode(currentHead);
+    }
+  }
+
+  addToTail(data) {
+    let lastNode = this.head;
+    if (!lastNode) {
+      this.head = new Node(data);
+    } else {
+      let temp = this.head;
+      while (temp.getNextNode() !== null) {
+        temp = temp.getNextNode();
+      }
+      temp.setNextNode(new Node(data));
+    }
+  }
+
+  removeHead() {
+    const removedHead = this.head;
+    if (!removedHead) {
+      return;
+    }
+    this.head = removedHead.getNextNode();
+    return removedHead.data;
+  }
+
+  printList() {
+    let currentNode = this.head;
+    let output = "<head> ";
+    while (currentNode !== null) {
+      output += currentNode.data + " ";
+      currentNode = currentNode.next;
+    }
+    output = output.concat("<tail>");
+    console.log(output);
+  }
+}
+```
+
+<br>
+
+</details>
+
+<br>
+
+```js
+class Queue {
+  constructor() {
+    this.queue = new LinkedList();
+    this.size = 0;
+  }
+}
+
+const queue = new Queue();
+```
+
+<br>
