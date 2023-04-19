@@ -73,8 +73,6 @@ class Node {
 <summary>Linked List</summary>
 
 ```js
-const Node = require("./Node");
-
 class LinkedList {
   constructor() {
     this.head = null;
@@ -137,8 +135,155 @@ class Queue {
     this.size = 0;
   }
 }
+```
 
-const queue = new Queue();
+<br>
+
+## Enqueue
+
+**Enqueue** - _"add to a queue"_.
+
+- The new added node is always added to the end of the queue.
+- If the queue is empty, the node we're adding becomes both the head and tail of the queue.
+- If the queue has at least one other node, the added node only becomes the new tail.
+
+```js
+enqueue(data) {
+    this.queue.addToTail(data);
+    this.size++;
+}
+```
+
+<br>
+
+## Dequeue
+
+**Dequeue** - _"remove from a queue"_.
+
+We remove items from the head of the queue.
+
+The `dequeue` methods returns and removes the current head, and replaces it with the following node.
+
+```js
+dequeue() {
+    const data = this.queue.removeHead();
+    this.size--;
+    return data;
+}
+```
+
+<br>
+
+## Bounded Queues
+
+Some queues require limits on the number of nodes they can have, while other queues don’t.
+
+- The `maxSize` property will limit the total node count
+- `hasRoom()` returns `true` if the queue has space to add another node
+- `isEmpty` returns `true` if the `size` of a queue is `0`
+
+```js
+class Queue {
+  constructor(maxSize = Infinity) {
+    this.queue = new LinkedList();
+    this.maxSize = maxSize;
+    this.size = 0;
+  }
+
+  hasRoom() {
+    return this.size < this.maxSize;
+  }
+
+  isEmpty() {
+    return this.size === 0;
+  }
+
+  // other methods
+}
+```
+
+<br>
+
+## Avoiding Underflow
+
+**Underflow** occurs when we try to remove elements from an already empty queue – we cannot remove a node if it doesn’t exist.
+
+Underflow affects queues whether they are bounded or unbounded.
+
+```js
+dequeue() {
+    if (!this.isEmpty()) {
+        const data = this.queue.removeHead();
+        this.size--;
+        console.log(`Removed ${data} from queue! Queue size is now ${this.size}.`);
+        return data;
+    } else {
+        throw new Error("Queue is empty!");
+    }
+}
+```
+
+<br>
+
+## Avoiding Overflow
+
+**Overflow** occurs when we add an element to a queue that does not have room for a new node.
+
+This condition affects bounded queues because they have fixed sizes they cannot exceed.
+
+For unbounded queues, though they don’t have a size restriction, at some point the size of the queue will exceed the available memory we can use to store this queue.
+
+```js
+enqueue(data) {
+    if (this.hasRoom()) {
+        this.queue.addToTail(data);
+        this.size++;
+        console.log(`Added ${data} to queue! Queue size is now ${this.size}.`);
+    } else {
+        throw new Error('Queue is full!');
+    }
+}
+```
+
+<br>
+
+## Final Queue Code
+
+```js
+class Queue {
+  constructor(maxSize = Infinity) {
+    this.queue = new LinkedList(); // !!!
+    this.maxSize = maxSize;
+    this.size = 0;
+  }
+
+  isEmpty() {
+    return this.size === 0;
+  }
+
+  hasRoom() {
+    return this.size < this.maxSize;
+  }
+
+  enqueue(data) {
+    if (this.hasRoom()) {
+      this.queue.addToTail(data);
+      this.size++;
+    } else {
+      throw new Error("Queue is full!");
+    }
+  }
+
+  dequeue() {
+    if (!this.isEmpty()) {
+      const data = this.queue.removeHead();
+      this.size--;
+      return data;
+    } else {
+      throw new Error("Queue is empty!");
+    }
+  }
+}
 ```
 
 <br>
