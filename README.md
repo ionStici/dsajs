@@ -8,5 +8,6 @@ Repository for notes and references 👨‍💻📚
 2. [Singly Linked Lists](./2-singly-linked-lists.md)
 3. [Doubly Linked Lists](./3-doubly-linked-lists.md)
 4. [Queues](./4-queues.md)
+5. [Stacks](./5-stacks.md)
 
 <br>
