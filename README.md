@@ -2,6 +2,12 @@
 
 Repository for notes and references 👨‍💻📚
 
+[🔗 JavaScript Algorithms and Data Structures : Repository](https://github.com/trekhleb/javascript-algorithms)
+
+[🔗 LeetCode : practice solving coding problems](https://leetcode.com/)
+
+<br>
+
 **Linear Data Structures**
 
 1. [Nodes](./1-nodes.md)
@@ -9,5 +15,11 @@ Repository for notes and references 👨‍💻📚
 3. [Doubly Linked Lists](./3-doubly-linked-lists.md)
 4. [Queues](./4-queues.md)
 5. [Stacks](./5-stacks.md)
+
+<br>
+
+**Complex Data Structures**
+
+6. [Hash Maps (Table)](./6-hash-maps.md)
 
 <br>
