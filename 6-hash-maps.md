@@ -12,4 +12,31 @@ For maps between 2 things, we don't care about the exact _order_ of the data. In
 
 For this to work, we use arrays and their indices. An array uses indices to keep track of values in memory, so we need a way of turning each key in out map to an index in our array.
 
-This operation of turning keys to indices is performed by a **Hash function**, which turns data into a number, so it will return an array index as output.
+This operation of turning keys to indices is performed by a **Hash function**, which turns data into an array index as output.
+
+<br>
+
+## Hash Functions
+
+A **hash function** takes some data as input an returns an array index as output.
+
+In order for it to return the correct array index, our implementation needs to know:
+
+- The size of the array
+- The size of values already saved
+
+**Hash functions:**
+
+- Needs to be simple by design, it should be able to perform calculations quickly.
+- It needs to be able to table whatever types of data we want to use as a key.
+
+<br>
+
+## Basic Hash Maps
+
+We need:
+
+- An array of a fixed size to insert our data into.
+- A hash function that translates the keys of our array into indexes into the array.
+
+The storage location at the index given by a hash is called the _hash bucket_.
