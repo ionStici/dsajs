@@ -4,39 +4,54 @@
 
 [**Hash Table (GitHub Repository)**](https://github.com/trekhleb/javascript-algorithms/tree/master/src/data-structures/hash-table)
 
-Being a **map** means relating 2 pieces of information to each other.
+<br>
 
-_Map requirement:_ In order for a relationshit to be a map, every key that is used can only be the key to a single value.
+## Maps
 
-For maps between 2 things, we don't care about the exact _order_ of the data. Instead, we only care that a given input gives the accurate output.
+- Being a **map** means relating two pieces of information.
 
-For this to work, we use arrays and their indices. An array uses indices to keep track of values in memory, so we need a way of turning each key in out map to an index in our array.
+- _Map requirement:_ for a relationship to be a map, every key that is used can only be the key to a single value.
 
-This operation of turning keys to indices is performed by a **Hash function**, which turns data into an array index as output.
+- When working with maps, we don't care about the sequence of the data. Instead, we only care that a given input, gives the accurate output.
+
+- We can achieve this by turning each key in our map to an array index, so that the map value will be stored at that index.
+
+- To turn data like map keys into array indexes, we use a special function called a **hash function**.
 
 <br>
 
 ## Hash Functions
 
-A **hash function** takes some data as input an returns an array index as output.
+- A hash function takes some data as input and returns an array index as output.
 
-In order for it to return the correct array index, our implementation needs to know:
+- In order for it to return the corrent array index, the hash map implementation needs to know the size of the array.
 
-- The size of the array
-- The size of values already saved
+- The storage location at the index given by a hash is called the **hash bucket**.
 
-**Hash functions:**
-
-- Needs to be simple by design, it should be able to perform calculations quickly.
-- It needs to be able to table whatever types of data we want to use as a key.
+- First, the hash function translates the key into the hash, then it performs modulo arithmetic to turn the hash into an array index.
 
 <br>
 
-## Basic Hash Maps
+## Collisions
 
-We need:
+**Hash collision**: the hash function might produce the same hash for two different keys.
 
-- An array of a fixed size to insert our data into.
-- A hash function that translates the keys of our array into indexes into the array.
+There are several strategies for resolving hash collisions.
 
-The storage location at the index given by a hash is called the _hash bucket_.
+### Separate chaining
+
+The **separate chaining** strategy avoids collisions by updating the underlying data structure. Instead of an array of values that are mapped to by hashes, it could be an array of linked lists.
+
+A hash map with a linked list separate chaining strategy - if a linked list already exists at the address, append the value to the linked list given.
+
+But, given the fact that the same hash bucket can have a linked list with multiple values, how do we know which values relate back to which keys?
+
+_By saving the map keys as well._ Iterating through the linked list and checking if our key is the same as the saved key.
+
+### Open Addressing
+
+Another hash collision strategy: **open addressing**.
+
+In open addressing we stick to the array as our underlying data structure, but we continue looking for a new index to save our data if the first result of our hash function has a different key's data.
+
+<br>
