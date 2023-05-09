@@ -54,4 +54,10 @@ Another hash collision strategy: **open addressing**.
 
 In open addressing we stick to the array as our underlying data structure, but we continue looking for a new index to save our data if the first result of our hash function has a different key's data.
 
+**Probing** means continuing to find new array indeces in a fixed sequence until an empty index is found.
+
+There are more sophisticated ways to find the next address after a hash collision: Linear probing system, quadratic probing open addressing system.
+
+**Clustering** is what happens when a single hash collision causes additional hash collisions.
+
 <br>
