@@ -61,3 +61,23 @@ There are more sophisticated ways to find the next address after a hash collisio
 **Clustering** is what happens when a single hash collision causes additional hash collisions.
 
 <br>
+
+## Hash Maps in JavaScript
+
+```js
+class HashMap {
+  constructor(size = 0) {
+    this.hashmap = new Array(size).fill(null);
+  }
+
+  hash(key) {}
+}
+```
+
+**Hash Maps** - data structures for efficient key-value stores.
+
+Capable of assigning and retrieving data in a fast way.
+
+Hash map underlying data structure - array.
+
+A value is stored at an array index determined by plugging the key into a hash function. Because we always know exactly where to find values in a hash map, we have constant access to any of the values it contains.

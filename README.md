@@ -21,5 +21,6 @@ Repository for notes and references 👨‍💻📚
 **Complex Data Structures**
 
 6. [Hash Maps (Table)](./6-hash-maps.md)
+7. [Trees](./7-trees.md)
 
 <br>
