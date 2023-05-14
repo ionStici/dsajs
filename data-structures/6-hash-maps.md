@@ -133,6 +133,9 @@ class HashMap {
   assign(key, value) {
     const arrayIndex = this.hash(key);
     const linkedList = this.hashmap[arrayIndex];
+
+    console.log(`Storing ${value} at index ${arrayIndex}`);
+
     if (linkedList.head === null) {
       linkedList.addToHead({ key, value });
       return;
@@ -159,13 +162,36 @@ class HashMap {
     let current = this.hashmap[arrayIndex].head;
 
     while (current) {
-      if (current.data.key === key) return current.data.value;
+      if (current.data.key === key) {
+        console.log(
+          `\nRetrieving ${current.data.value} from index ${arrayIndex}`
+        );
+        return current.data.value;
+      }
       current = current.next;
     }
 
     return null;
   }
 }
+
+const hashMap = new HashMap(10);
+
+hashMap.assign("first", "1");
+hashMap.assign("second", "2");
+hashMap.assign("third", "3");
+
+console.log(hashMap.retrieve("first"));
+console.log(hashMap.retrieve("second"));
+console.log(hashMap.retrieve("third"));
+
+// Storing 1 at index 4
+// Storing 2 at index 2
+// Storing 3 at index 6
+
+// Retrieving 1 from index 4
+// Retrieving 2 from index 2
+// Retrieving 3 from index 6
 ```
 
 <br>
