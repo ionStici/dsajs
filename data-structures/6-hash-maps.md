@@ -1,4 +1,4 @@
-[&larr; Back](./README.md)
+[&larr; Back](./../README.md)
 
 # Hash Maps / Hash Table
 
@@ -68,9 +68,13 @@ There are more sophisticated ways to find the next address after a hash collisio
 
 Capable of assigning and retrieving data in a fast way.
 
-Hash map underlying data structure - array.
+Hash map underlying data structure - **array**.
 
-A value is stored at an array index determined by plugging the key into a hash function. Because we always know exactly where to find values in a hash map, we have constant access to any of the values it contains.
+A value is stored at an array index determined by plugging the key into a hash function.
+
+A hashing function must be _deterministic_, meaning it must always return the same index when given the same key.
+
+After we get the hash code, we must _compress_ it (convert) to an array index using modular arithmetic and the hash map length.
 
 <br>
 
@@ -78,6 +82,25 @@ A value is stored at an array index determined by plugging the key into a hash f
 class HashMap {
   constructor(size = 0) {
     this.hashmap = new Array(size).fill(null);
+  }
+
+  hash(key) {
+    let hashCode = 0;
+
+    for (let i = 0; i < key.length; i++)
+      hashCode += hashCode + key.charCodeAt(i);
+
+    return hashCode % this.hashmap.length;
+  }
+
+  assign(key, value) {
+    const arrayIndex = this.hash(key);
+    this.hashmap[arrayIndex] = value;
+  }
+
+  retrieve(key) {
+    const arrayIndex = this.hash(key);
+    return this.hashmap[arrayIndex];
   }
 }
 ```

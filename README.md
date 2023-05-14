@@ -10,17 +10,24 @@ Repository for notes and references 👨‍💻📚
 
 **Linear Data Structures**
 
-1. [Nodes](./1-nodes.md)
-2. [Singly Linked Lists](./2-singly-linked-lists.md)
-3. [Doubly Linked Lists](./3-doubly-linked-lists.md)
-4. [Queues](./4-queues.md)
-5. [Stacks](./5-stacks.md)
+1. [Nodes](./data-structures/1-nodes.md)
+2. [Singly Linked Lists](./data-structures/2-singly-linked-lists.md)
+3. [Doubly Linked Lists](./data-structures/3-doubly-linked-lists.md)
+4. [Queues](./data-structures/4-queues.md)
+5. [Stacks](./data-structures/5-stacks.md)
 
 <br>
 
 **Complex Data Structures**
 
-6. [Hash Maps (Table)](./6-hash-maps.md)
-7. [Trees](./7-trees.md)
+6. [Hash Maps (Table)](./data-structures/6-hash-maps.md)
+7. [Trees](./data-structures/7-trees.md)
+8. [Heaps](./data-structures/8-heaps.md)
+
+<br>
+
+**Algorithms**
+
+- [Recursion](./algorithms/recursion.md)
 
 <br>
