@@ -25,9 +25,3 @@ Repository for notes and references 👨‍💻📚
 8. [Heaps](./data-structures/8-heaps.md)
 
 <br>
-
-**Algorithms**
-
-- [Recursion](./algorithms/recursion.md)
-
-<br>
