@@ -23,5 +23,6 @@ Repository for notes and references 👨‍💻📚
 6. [Hash Maps (Table)](./data-structures/6-hash-maps.md)
 7. [Trees](./data-structures/7-trees.md)
 8. [Heaps](./data-structures/8-heaps.md)
+9. [Graphs](./data-structures/9-graphs.md)
 
 <br>
