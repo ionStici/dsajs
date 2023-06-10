@@ -26,3 +26,7 @@ Repository for notes and references 👨‍💻📚
 9. [Graphs](./data-structures/9-graphs.md)
 
 <br>
+
+**Algorithms**
+
+10. [Recursion](./algorithms/recursion.md)
