@@ -37,7 +37,7 @@ Repository for notes and references 👨‍💻📚
 
 **Search and Graph Search Algorithms**
 
-13. empty
+13. [Binary Search and Search Trees]('./algorithms/binary-search.md)
 14. empty
 15. empty
 
