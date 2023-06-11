@@ -35,9 +35,27 @@ Repository for notes and references 👨‍💻📚
 
 <br>
 
+**Search and Graph Search Algorithms**
+
+13. empty
+14. empty
+15. empty
+
+<br>
+
 **Other**
 
 - [Recursion](./algorithms/recursion.md)
 - [Asymptotic Notation](./algorithms/asymptotic-notation.md)
+
+<br>
+
+_JavaScript Algorithm Practice (ideas)_
+
+- Sieve of Eratosthenes
+- Capturing Rainwater
+- Sorting with Custom Comparator Functions
+- Introduction To Dynamic Programming in JavaScript
+- The Knapsack Problem
 
 <br>
