@@ -29,4 +29,13 @@ Repository for notes and references 👨‍💻📚
 
 **Algorithms**
 
-10. [Recursion](./algorithms/recursion.md)
+10. [Bubble Sort](./algorithms/bubble-sort.md)
+
+<br>
+
+**Other**
+
+- [Recursion](./algorithms/recursion.md)
+- [Asymptotic Notation](./algorithms/asymptotic-notation.md)
+
+<br>
