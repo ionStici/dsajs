@@ -31,6 +31,7 @@ Repository for notes and references 👨‍💻📚
 
 10. [Bubble Sort](./algorithms/bubble-sort.md)
 11. [Merge Sort](./algorithms/merge-sort.md)
+12. [Quicksort](./algorithms/quicksort.md)
 
 <br>
 
