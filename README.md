@@ -39,7 +39,7 @@ Repository for notes and references 👨‍💻📚
 
 13. [Binary Search and Search Trees]('./algorithms/binary-search.md)
 14. [Graph Traversals](./algorithms/graph-traversals.md)
-15. empty
+15. [Dijkstra's Algorithm](./algorithms/dijkstra-algorithm.md)
 
 <br>
 
